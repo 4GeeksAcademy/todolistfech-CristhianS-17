@@ -1,11 +1,146 @@
-/* 
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+* {
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+}
 
-*/
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #f5f5f5;
+    min-height: 100vh;
+    padding-top: 60px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+
+.title {
+    font-size: 80px;
+    font-weight: 100;
+    color: rgba(175, 47, 47, 0.15);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+.todo-card {
+    background: white;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+
+.todo-input {
+    width: 100%;
+    padding: 16px 16px 16px 60px; 
+    border: none;
+    font-size: 24px;
+    font-style: italic;
+    outline: none;
+    border-bottom: 2px solid #ededed;
+    color: #4d4d4d;
+}
+
+.todo-input::placeholder {
+    color: #e6e6e6;
+}
+
+
+.todo-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    font-size: 24px;
+    border-bottom: 1px solid #ededed;
+    background: white;
+}
+
+.todo-item:hover {
+    background: #fcfcfc;
+}
+
+.todo-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1; 
+}
+
+.bullet {
+    width: 12px;
+    height: 12px;
+    border: 1px solid #38b2ac;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.task-text {
+    color: #4d4d4d;
+    word-break: break-all;
+}
+
+
+.delete-button {
+    background: none;
+    border: none;
+    color: #cc9a9a;
+    font-size: 26px;
+    cursor: pointer;
+    opacity: 0; 
+    transition: color 0.2s ease, opacity 0.2s;
+    padding: 0 10px;
+}
+
+.todo-item:hover .delete-button {
+    opacity: 1; 
+}
+
+.delete-button:hover {
+    color: #af5b5e;
+}
+
+
+.footer {
+    padding: 12px 15px;
+    color: #777;
+    font-size: 14px;
+    border-top: 1px solid #e6e6e6;
+    background: white;
+}
+
+.empty-msg {
+    color: #d9d9d9;
+    font-size: 18px;
+    font-style: italic;
+    justify-content: center;
+    padding: 30px;
+}
+
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in { 
+    animation: fadeIn 0.3s ease-out forwards;
+}
